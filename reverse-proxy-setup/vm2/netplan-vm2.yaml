@@ -1,0 +1,12 @@
+# Salin ke /etc/netplan/01-static.yaml  lalu: sudo netplan apply
+network:
+  version: 2
+  ethernets:
+    enp0s3:                    # ganti sesuai `ip a`
+      dhcp4: false
+      addresses: [192.168.1.102/24]
+      routes:
+        - to: default
+          via: 192.168.1.1
+      nameservers:
+        addresses: [8.8.8.8, 1.1.1.1]

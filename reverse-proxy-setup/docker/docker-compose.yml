@@ -1,0 +1,11 @@
+# Server 2 (Docker) - backend Nginx
+# Jalankan: docker compose up -d
+services:
+  server2:
+    image: nginx:alpine
+    container_name: server2
+    restart: unless-stopped
+    ports:
+      - "8083:80"          # port host:container
+    volumes:
+      - ./html:/usr/share/nginx/html:ro
